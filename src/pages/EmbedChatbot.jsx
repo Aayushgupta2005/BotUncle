@@ -21,7 +21,7 @@ const EmbedChatbot = () => {
   useEffect(() => {
     if (userId) {
       setLink(`
-<iframe src="http://localhost:5173/chatbot?userId=${userId}" 
+<iframe src="https://botuncle.vercel.app/chatbot?userId=${userId}" 
     id="chatbot-iframe" 
     style="display:none;position:fixed;bottom:80px;right:16px;width:350px;height:500px;border:none;z-index:1000;
     opacity: 0; transform: scale(0.8); transition: opacity 0.3s ease, transform 0.3s ease;">
