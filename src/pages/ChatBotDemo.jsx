@@ -50,7 +50,7 @@ const ChatbotDemo = () => {
       faqText += `${index + 1}. Q: ${faq.question}\n   A: ${faq.answer}\n`;
     });
 
-    const fullPrompt = `${faqText}\nNow, based on this information, answer the following user query: "${input}"`;
+    const fullPrompt = `${faqText}\nNow, based on this information, answer the following user query: "${input}", whenever you don;t now anything like user asked something which is not listed in provided faqs , i am not able to answer this query right now, please contact customer support for more info (in a formal way) and also answer the sentimental question very formally , like if someone say you hello or wishes you something like goodafternoon etc, then response accordingly sentimentally`;
 
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
