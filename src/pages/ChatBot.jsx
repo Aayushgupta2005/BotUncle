@@ -53,7 +53,24 @@ const Chatbot = () => {
       faqText += `${index + 1}. Q: ${faq.question}\n   A: ${faq.answer}\n`;
     });
 
-    const fullPrompt = `${faqText}\nNow, based on this information, answer the following user query: "${input}", whenever you don;t now anything like user asked something which is not listed in provided faqs , i am not able to answer this query right now, please contact customer support for more info (in a formal way) and also answer the sentimental question very formally , like if someone say you hello or wishes you something like goodafternoon etc, then response accordingly sentimentally`;
+    const fullPrompt = `
+You are a helpful and polite AI assistant representing an organization. Here are some frequently asked questions (FAQs) and their answers:
+
+${faqText}
+
+Now, based on the above information, respond to the following user query in a formal and polite tone:
+
+"${input}"
+
+Guidelines:
+- If the query is a greeting (e.g., "hello", "hi", "good morning", etc.), respond warmly and professionally.
+- If the query is clearly covered in the FAQs, answer it accurately and concisely.
+- If the query is not addressed in the FAQs or you are unsure, respond with:
+  "I'm sorry, but I'm unable to answer that at the moment. Please contact our customer support for further assistance."
+
+Keep the response professional, helpful, and user-friendly.
+`;
+
 
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
