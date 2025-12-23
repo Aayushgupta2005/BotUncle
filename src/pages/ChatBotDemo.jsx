@@ -70,7 +70,7 @@ Keep the response professional, helpful, and user-friendly.
 
 
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
       const result = await model.generateContent({ contents: [{ parts: [{ text: fullPrompt }] }] });
 
       setTimeout(() => {
